@@ -8,8 +8,9 @@ def decode_secret_message(url):
     if response.status_code != 200:
         print("Failed to retrieve the document.")
         return
-    
+    #print(response.text)
     data = response.text.strip().splitlines()
+    print(data)
     # Parse coordinates and characters
     points = []
     for line in data:
@@ -46,9 +47,9 @@ def decode_secret_message(url):
 
 # Example usage
 # Replace 'your_google_doc_url' with the actual URL of the document
-decode_secret_message("your_google_doc_url")
+
 def main():
-    print("Hello, World!")
+    decode_secret_message("https://docs.google.com/document/d/e/2PACX-1vQGUck9HIFCyezsrBSnmENk5ieJuYwpt7YHYEzeNJkIb9OSDdx-ov2nRNReKQyey-cwJOoEKUhLmN9z/pub")
 
 if __name__ == "__main__":
     main()
